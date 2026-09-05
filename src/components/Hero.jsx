@@ -83,7 +83,7 @@ export default function Hero() {
             </a>
 
             <a
-              href="/RAJDEEP_CHATTERJEE_Resume"
+              href="/RAJDEEP_CHATTERJEE_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               download="Rajdeep_Chatterjee_CV.pdf"
