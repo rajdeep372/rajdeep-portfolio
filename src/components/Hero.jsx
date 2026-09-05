@@ -86,7 +86,7 @@ export default function Hero() {
               href="/RAJDEEP_CHATTERJEE_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              download="RAJDEEP_CHATTERJEE_Resume.pdf"
+              download="Rajdeep_Chatterjee_Resume.pdf"
               className="px-8 py-3 glass hover:bg-white/10 text-white rounded-full font-medium transition-all duration-300 flex items-center gap-2"
             >
               <Download className="w-5 h-5" />
