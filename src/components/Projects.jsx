@@ -1,34 +1,14 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, Sparkles, FolderGit2 } from 'lucide-react';
 import { Tilt } from 'react-tilt';
 
 const projects = [
   {
-    title: "LunaFlow - Menstrual Health Tracker",
-    description: "A comprehensive menstrual health tracking application integrated with hardware sensors.",
-    tech: ["React.js", "Node.js", "ESP32", "MAX30102 sensor"],
-    link: "https://lunaflow-pro-webapp.onrender.com",
-    github: "https://github.com/rajdeep372/LunaFlow_Enterprise.git"
-  },
-  {
-    title: "AI-Powered Movie Recommendation System",
-    description: "Smart movie recommendations based on user preferences and facial expression AI.",
-    tech: ["React.js", "Node.js", "MongoDB", "Facial expression AI"],
-    link: "#",
-    github: "https://github.com/rajdeep372/Movie_Mood.git"
-  },
-  {
-    title: "Live Vehicle Service Operations Dashboard",
-    description: "Instant Mechanic - A B2B SaaS dashboard for managing vehicle service operations in real-time.",
-    tech: ["B2B SaaS dashboard", "React", "Node.js"],
-    link: "https://instant-mechanic-dashboard-lovat.vercel.app",
-    github: "https://github.com/rajdeep372/instant-mechanic-dashboard.git"
-  },
-  {
-    title: "Apka Sikayat",
-    description: "A full-stack, enterprise-grade smart governance platform designed for the Government of Delhi that digitizes citizen complaints with AI validation, real-time tracking, and CM executive dashboards.",
+    title: "Apka Sikayat - Smart Governance Platform",
+    category: "Full Stack & AI",
+    description: "Enterprise-grade smart governance platform designed for the Government of Delhi. Digitizes citizen complaints with AI validation, real-time tracking, and CM executive analytics dashboards.",
     tech: [
       "Next.js",
       "TypeScript",
@@ -40,75 +20,132 @@ const projects = [
       "Gemini AI",
       "Pinecone"
     ],
-    github: "https://github.com/rajdeep372/Apka-Sikayat.git"
+    github: "https://github.com/rajdeep372/Apka-Sikayat.git",
+    featured: true
+  },
+  {
+    title: "LunaFlow - Menstrual Health Tracker",
+    category: "IoT & Full Stack",
+    description: "A comprehensive menstrual health tracking and predictive application integrated with ESP32 and MAX30102 hardware biometric sensors.",
+    tech: ["React.js", "Node.js", "ESP32", "MAX30102 sensor", "Express.js"],
+    link: "https://lunaflow-pro-webapp.onrender.com",
+    github: "https://github.com/rajdeep372/LunaFlow_Enterprise.git",
+    featured: true
+  },
+  {
+    title: "Live Vehicle Service Operations Dashboard",
+    category: "B2B SaaS Dashboard",
+    description: "Instant Mechanic - A real-time SaaS operations dashboard for managing multi-bay vehicle servicing workflows and live technician dispatching.",
+    tech: ["React.js", "Tailwind CSS", "Node.js", "REST APIs"],
+    link: "https://instant-mechanic-dashboard-lovat.vercel.app",
+    github: "https://github.com/rajdeep372/instant-mechanic-dashboard.git",
+    featured: false
+  },
+  {
+    title: "AI-Powered Movie Recommendation System",
+    category: "AI & Machine Learning",
+    description: "Intelligent cinematic recommendation engine leveraging user emotion analysis and facial expression recognition AI to curate personalized movie watchlists.",
+    tech: ["React.js", "Node.js", "MongoDB", "Facial Expression AI"],
+    link: "#",
+    github: "https://github.com/rajdeep372/Movie_Mood.git",
+    featured: false
   },
 ];
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 relative">
-      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-neon-cyan/10 rounded-full blur-[120px] -z-10 translate-y--1/2" />
-
+    <section id="projects" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 relative">
       <div className="max-w-7xl mx-auto">
+        {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Featured <span className="text-neon-cyan">Projects</span></h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-neon-cyan to-neon-purple mx-auto rounded-full"></div>
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-bold uppercase tracking-wider mb-2.5">
+            <Sparkles className="w-3.5 h-3.5" />
+            Featured Work
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
+            Featured <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">Projects</span>
+          </h2>
+          <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 mx-auto rounded-full mt-3 sm:mt-4"></div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.5, delay: index * 0.08 }}
             >
-              <Tilt options={{ max: 15, scale: 1.02, speed: 400 }} className="h-full">
-                <div className="h-full glass-card p-6 md:p-8 rounded-2xl flex flex-col group border border-white/10 hover:border-neon-cyan/50 transition-all duration-500 overflow-hidden relative">
+              <Tilt options={{ max: 10, scale: 1.01, speed: 400 }} className="h-full">
+                <div className="h-full glass-card rounded-3xl flex flex-col group overflow-hidden border border-slate-200/90 shadow-glass hover:shadow-glass-lg transition-all duration-300">
+                  {/* Browser Mock Window Header */}
+                  <div className="px-5 sm:px-6 py-3 bg-slate-100/70 border-b border-slate-200/80 flex items-center justify-between">
+                    <div className="flex items-center gap-1.5">
+                      <div className="w-2.5 h-2.5 rounded-full bg-rose-400"></div>
+                      <div className="w-2.5 h-2.5 rounded-full bg-amber-400"></div>
+                      <div className="w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
+                    </div>
+                    <span className="text-[10px] sm:text-[11px] font-bold text-slate-500 uppercase tracking-wider">
+                      {project.category}
+                    </span>
+                    <FolderGit2 className="w-4 h-4 text-slate-400 shrink-0" />
+                  </div>
 
-                  {/* Hover gradient background */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-neon-cyan/0 via-neon-cyan/0 to-neon-purple/0 group-hover:from-neon-cyan/10 group-hover:to-neon-purple/10 transition-all duration-500 z-0"></div>
+                  {/* Card Body */}
+                  <div className="p-5 sm:p-7 flex flex-col flex-grow justify-between">
+                    <div>
+                      <h3 className="text-lg sm:text-2xl font-bold text-slate-900 mb-2.5 group-hover:text-blue-600 transition-colors">
+                        {project.title}
+                      </h3>
+                      <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-5 font-normal">
+                        {project.description}
+                      </p>
 
-                  <div className="relative z-10 flex flex-col h-full">
-                    <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-neon-cyan transition-colors">{project.title}</h3>
-                    <p className="text-slate-400 mb-6 flex-grow">{project.description}</p>
-
-                    <div className="flex flex-wrap gap-2 mb-8">
-                      {project.tech.map((tech, i) => (
-                        <span key={i} className="text-xs font-medium px-2.5 py-1 glass rounded-md text-neon-cyan/80">
-                          {tech}
-                        </span>
-                      ))}
+                      {/* Tech Chips */}
+                      <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-6 sm:mb-8">
+                        {project.tech.map((tech, i) => (
+                          <span 
+                            key={i} 
+                            className="text-xs font-semibold px-2.5 py-1 bg-blue-50/80 border border-blue-200/60 rounded-lg text-blue-700"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
                     </div>
 
-                    <div className="flex gap-4 mt-auto pt-4 border-t border-white/10 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                      {project.link !== "#" && (
+                    {/* Bottom Link Actions */}
+                    <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 pt-4 border-t border-slate-100">
+                      {project.link && project.link !== "#" && (
                         <a
                           href={project.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2 text-sm font-medium text-white hover:text-neon-cyan transition-colors"
+                          className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-xs hover:shadow-glow-blue transition-all"
                         >
-                          <ExternalLink size={16} />
-                          Live Demo
+                          <ExternalLink className="w-3.5 h-3.5" />
+                          <span>Live Demo</span>
                         </a>
                       )}
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm font-medium text-white hover:text-neon-purple transition-colors"
-                      >
-                        <Github size={16} />
-                        GitHub
-                      </a>
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs border border-slate-200 transition-all"
+                        >
+                          <Github className="w-3.5 h-3.5" />
+                          <span>View Code</span>
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -120,3 +157,4 @@ export default function Projects() {
     </section>
   );
 }
+

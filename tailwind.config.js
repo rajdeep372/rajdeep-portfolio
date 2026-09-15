@@ -8,10 +8,25 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        neon: {
-          cyan: '#00f3ff',
-          blue: '#0055ff',
-          purple: '#bc13fe'
+        brand: {
+          50: '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1d4ed8',
+          800: '#1e40af',
+          900: '#1e3a8a',
+        },
+        accent: {
+          purple: '#8b5cf6',
+          cyan: '#06b6d4',
+          indigo: '#6366f1',
+          emerald: '#10b981',
+          amber: '#f59e0b',
+          rose: '#f43f5e',
         }
       },
       backgroundImage: {
@@ -20,10 +35,15 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       boxShadow: {
-        'neon-cyan': '0 0 15px 5px rgba(0, 243, 255, 0.3)',
-        'neon-purple': '0 0 15px 5px rgba(188, 19, 254, 0.3)',
+        'glass-sm': '0 2px 10px 0 rgba(0, 0, 0, 0.03), 0 1px 2px 0 rgba(0, 0, 0, 0.02)',
+        'glass': '0 8px 30px 0 rgba(0, 0, 0, 0.05)',
+        'glass-lg': '0 20px 40px -15px rgba(0, 0, 0, 0.08)',
+        'glow-blue': '0 0 25px -5px rgba(59, 130, 246, 0.3)',
+        'glow-purple': '0 0 25px -5px rgba(139, 92, 246, 0.3)',
+        'glow-cyan': '0 0 25px -5px rgba(6, 182, 212, 0.3)',
       }
     },
   },
   plugins: [],
 };
+
